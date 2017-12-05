@@ -1,0 +1,341 @@
+.anim-balloon{
+    position:absolute;
+    top:0;
+    left:-300px;
+    width:240px;
+    height:365px;
+    animation: balloon 3s ease-in-out infinite;
+    &:after {
+    content:"";
+    width:100%;
+    height:100%;
+    background:url("/images/balloon.svg") no-repeat center center/220px;
+    position:absolute;
+    top:0;
+    right:0;
+    transform:rotate(-5deg);
+ }
+}
+
+
+
+@keyframes balloon {
+	50% { transform: translateY(-5px); }
+}
+
+
+
+
+// from landing
+
+@-webkit-keyframes image-animate1 {
+      80% {
+        transform: translateY(calc(-100% + #{$image-height}));
+      }
+      100% {
+        transform: translateY(calc(-100% + #{$image-height}));
+      }
+    }
+@-webkit-keyframes image-animate2 {
+      60% {
+        transform: translateY(calc(-50% + #{$image-height}));
+      }
+      80% {
+        transform: translateY(calc(-100% + #{$image-height}));
+      }
+      100% {
+        transform: translateY(calc(-100% + #{$image-height}));
+      }
+}
+
+
+
+.animate-img {
+        width: 100%;
+        height: auto;
+}
+
+.heatmap .animate-img {
+	animation: image-animate1 ease-in-out infinite;
+	animation-duration: 7s;
+}
+.scrollmap .animate-img {
+	animation: image-animate2 ease-in-out infinite;
+	animation-duration: 10s;
+	animation-delay: 1s;
+}
+.overlay .animate-img {
+	animation: image-animate1 ease-in-out infinite;
+	animation-duration: 8.5s;
+}
+
+
+//from recording
+
+ .planet, .journey, .saturn, .ship {
+    @include position(absolute, 0 0 0 0);
+    background-color: transparent;
+  }
+ .ship {
+    animation: floating 10s infinite;
+    animation-timing-function: ease-in-out;
+	&:before {
+	    content: "";
+	    width: 105px;
+	    height: 116px;
+	    @include position(absolute, null 7% 170px null);
+	    background: url("/images/recordings/ship.svg") no-repeat; // Leave quotes. Does not like it without quotes...
+	    background-size: 105px;
+	    background-position: center;
+
+	    transform: rotate(-5deg);
+	    animation: rocking 10s infinite;
+	    animation-timing-function: ease-in-out;
+
+	    @media screen and (max-width: 1110px) {
+	      display: none;
+	    }
+	}
+  }
+
+  @keyframes rocking {
+    50% { transform: rotate(5deg);}
+  }
+
+ .journey:before {
+    content: "";
+    width: 100%;
+    height: 465px;
+    @include position(absolute, null null -50px 0);
+    background: url("/images/recordings/dotted-line2.svg") no-repeat 46% center; // Leave quotes. Does not like it without quotes...
+    // Is not playing ball when a background-size applied either.
+    opacity: 0.4;
+    z-index: -2;
+
+    @media screen and (max-height: 650px) {
+      bottom: -100px;
+      opacity: 0.3;
+    }
+ }
+
+ .planet:before {
+    content: "";
+    width: 875px;
+    height: 875px;
+    @include position(absolute, null null -500px 50%);
+    margin-left: -437px;
+    background: url("/images/recordings/earth.png") no-repeat; // Leave quotes. Does not like it without quotes...
+    background-size: 100%;
+    background-position: center;
+    z-index: -1;
+    animation: slow-rotate 180s infinite;
+    animation-timing-function: linear;
+    transition: bottom 0.5s ease;
+}
+
+@keyframes slow-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+.astronaut-wrap {
+  // So astronaut can be moved with skrollr on page scroll
+  display: inline-block;
+  position: relative;
+}
+
+.astronaut-img {
+  animation: floating 10s infinite;
+  animation-timing-function: ease-in-out;
+  position: relative;
+}
+
+@keyframes floating {
+  20% { transform: translate(-10px, 10px); }
+  40% { transform: translate(10px, 10px); }
+  60% { transform: translate(-10px, -10px); }
+  80% { transform: translate(10px, -10px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+  /////////////////
+
+
+
+
+
+
+
+////////////////////// Sign up form animations
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -7%, 0);
+    transform: translate3d(0, -7%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -7%, 0);
+    transform: translate3d(0, -7%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 7%, 0);
+    transform: translate3d(0, 7%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 7%, 0);
+    transform: translate3d(0, 7%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+@-webkit-keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 7%, 0);
+    transform: translate3d(0, 7%, 0);
+  }
+}
+
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 7%, 0);
+    transform: translate3d(0, 7%, 0);
+  }
+}
+
+.fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+}
+
+@-webkit-keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -7%, 0);
+    transform: translate3d(0, -7%, 0);
+  }
+}
+
+@keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -7%, 0);
+    transform: translate3d(0, -7%, 0);
+  }
+}
+
+.fadeOutUp {
+  -webkit-animation-name: fadeOutUp;
+  animation-name: fadeOutUp;
+}
+
+
+
+@-webkit-keyframes fish {
+   0%   {   left: -100px; }
+   25%  {   bottom: 35%; }
+   50%  {   bottom: 20%; }
+   75%  {   bottom: 35%; }
+   100% {   left: 100%;
+            bottom: 20%; }
+}
+
+@-webkit-keyframes fish_revers {
+   0%   { right: -150px; }
+   25%  { bottom: 30%; }
+   50%  { bottom: 10%; }
+   75%  { bottom: 30%; }
+   100% { right: 100%;
+          bottom: 0%; }
+}
+
+@-webkit-keyframes bubbles {
+   0% {
+    top:-30px;
+    opacity:0.1;
+   }
+   25%{
+    opacity:0.5;
+   }
+   50%{
+    opacity:1;
+   }
+   75%{
+    opacity:0.5;
+   }
+   100% {
+     top:-60px;
+     opacity:0;
+   }
+}

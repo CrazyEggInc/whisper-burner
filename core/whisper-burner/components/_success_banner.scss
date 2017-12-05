@@ -1,0 +1,10 @@
+.success-banner {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background: $white;
+  border-bottom: solid 1px $ce-green;
+  text-align: center;
+  .success-message {
+	  color: $ce-green;
+  }
+}

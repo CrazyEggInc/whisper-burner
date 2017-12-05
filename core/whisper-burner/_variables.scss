@@ -1,0 +1,52 @@
+// variables
+
+$white:             #fff;
+$ce-lightest-grey:  #F2F2F3;
+$ce-superlight-gray:#FAFAFA;
+$ce-blue-grey:      #79869f;
+$ce-mid-grey:       #72787b;
+$ce-dark-grey:      #3A4145;
+$ce-darker-grey: 	#232729;
+$ce-light-grey:     #d9dadb;
+$ce-green:          #82bf02;
+$ce-blue:           #0087e2;
+$ce-yellow:         #82bf02; // REMOVE ?
+$ce-light-blue:     #F4F9FD;
+$ce-blue-light:     #f3f9fe; //for confetti
+$ce-text:           #6d6d6d; // primary text color
+$ce-border:         #E1E6EF; // border color
+$ce-table-grey:     #FBFCFD; // light blue/grey for backgrounds
+$ce-light-link:     #A5ACBB;
+$ce-warning-red:    #ea5e5c;
+$ce-cerulean-blue:  #0068AF;
+$ce-orange:         #F4AD3B;
+$ce-purple:         #8249c8;
+$sidebar-nav-color: #0068AF; // dark blue used in-app sidebar
+$sidebar-nav-light: #0070BC; // lightened dark-blue ("my account" button background color)
+$ce-pink:           #F14486;
+
+//Mobile Nav Menu
+$mob-menu-title: rgba($sidebar-nav-color, 0.6);
+$mob-menu-link-firstlevel-inactive: rgba($ce-blue, 0.6);
+$mob-menu-link-firstlevel-active: $ce-blue;
+$mob-menu-link-secondlevel: $sidebar-nav-color;
+
+
+$mob-menu-link: hsl(0, 0%, 43%);
+
+$mob-menu-title-size: 36px;
+$mob-menu-link-size: 20px;
+
+$image-width: 270px;
+$image-margin: 20px;
+$image-height: 150px;
+
+$sidebar-nav-color: $ce-cerulean-blue;
+
+$proxima-nova: "proxima-nova", $lucida-grande;
+$proxima-nova-soft: "proxima-nova-soft", $lucida-grande;
+$open-sans: "open sans", $lucida-grande;
+
+$border-radius: 4px;
+
+$solid-grey-border: 1px solid $ce-border;

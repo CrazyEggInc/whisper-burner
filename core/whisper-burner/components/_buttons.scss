@@ -1,0 +1,88 @@
+button, .btn {
+	@include button-color($ce-green);
+	box-sizing: border-box;
+	border: 0;
+	font-size: 100%;
+	cursor: pointer;
+	padding: 0 15px;
+	height: 45px;
+	line-height:45px;
+	color: $white;
+	font-family: $proxima-nova;
+	border-radius: $border-radius;
+	transition: background 0.1s ease;
+	text-decoration: none;
+	text-align: center;
+	display:inline-block;
+	&.lge-button {
+		height: 56px;
+		font-size: 1.4em;
+		line-height: 56px;
+		font-family: $proxima-nova-soft;
+	}
+	form & {
+		height: 45px;
+	}
+	&.btn-shadow {
+		.inner-button {
+			position: relative;
+			top: 2px;
+		}
+	}
+	&.btn-sml {
+		height: 40px;
+		line-height: 40px;
+	}
+	&.btn-extra-sml {
+		height: 35px;
+		line-height: 35px;
+		font-size: 14px;
+	}
+	&.btn-blue {
+		@include button-color($ce-blue);
+	}
+	&.btn-warning-red {
+		@include button-color($ce-warning-red);
+	}
+	&.btn-grey {
+		@include button-color($ce-light-grey);
+	}
+	&.btn-green {
+		@include button-color($ce-green);
+	}
+	&.btn-blue-grey {
+		@include button-color(lighten($ce-blue-grey, 15%));
+	}
+}
+
+.sign-in-button {
+	padding: 0 15px;
+	display: inline-block;
+	height: 35px;
+	line-height: 35px;
+	color: $ce-blue-grey;
+	border: 1px solid $ce-light-grey;
+	background: $white;
+	border-radius: $border-radius;
+	@include position(absolute, 20px 20px null null);
+	text-decoration: none;
+	transition: color 0.2s ease;
+	z-index: 100;
+
+	&:hover {
+		color: $ce-dark-grey;
+	}
+}
+
+
+.recordings, .landing {
+	.sign-in-button {
+		border: 1px solid $white;
+		background: none;
+		color: $white;
+
+		&:hover {
+			background: rgba($white, 0.2);
+		}
+	}
+}

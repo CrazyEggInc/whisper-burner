@@ -1,0 +1,235 @@
+.modal {
+  ///////////////////////////////////////////////////////////////////////////////////
+  $modal-padding: 2.5em;
+  $modal-image-height: 135px; // ??
+  $modal-image-width: $modal-image-height; // ??
+  $border-radius: 4px;
+
+  label {
+    cursor: pointer;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  label img { // what is this image ?
+    $img-width: 300px;
+    border-radius: $img-width/2;
+    display: block;
+    max-width: $img-width;
+  }
+  //////////////////////////////////////////////////////////////////////////////////
+
+  .modal-state { // hides modal checkbox
+    display: none;
+  }
+
+  .modal-open {
+    overflow: hidden;
+  }
+
+  .modal-close {
+    @include position(absolute, $modal-padding/1.6 $modal-padding/1.6 null null);
+    display: block;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+
+    &:after {
+      @include icomoon-pseudo;
+      color: #000;
+      opacity: 0.2;
+      content: "\e612";
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    &:hover:after {
+      opacity: 0.4;
+    }
+  }
+
+  .btn { margin-top: 15px; padding: 0 20px; } // work on this
+
+  .modal-window { // overlay
+    transition: opacity 0.25s ease, visibility 0.1s ease 0.25s;
+    @include position(fixed, 0px 0px 0px 0px);
+    background: rgba(0,0,0, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 99999999999;
+    padding-top: 2.5em;
+
+    .modal-bg {
+      @include position(absolute, 0px 0px 0px 0px);
+      cursor: pointer;
+    }
+
+    @media #{$sm-screen} {
+      padding-top: 1em;
+    }
+
+    @media #{$med-screen} {
+      padding-top: 6em;
+    }
+
+    @media #{$lg-screen} {
+      padding-top: 8em;
+    }
+  }
+
+  .modal-inner {
+    transition: opacity 0.25s ease, top 0.25s ease-in-out; // just fade in/out ?
+    box-sizing: border-box;
+    border-radius: $border-radius;
+    background: $white;
+    margin-top: 0;
+    margin: auto;
+    max-height: 95%;
+    border: $solid-grey-border;
+    width: 550px;
+    position: relative;
+    overflow: auto;
+
+    .modal-padding {
+      padding: $modal-padding;
+      box-sizing: border-box;
+    }
+
+    .modal-bottom {
+      @include position(relative, null 0 0 null);
+      box-sizing: border-box;
+      z-index: 50;
+      background: $ce-table-grey;
+      border-top: $solid-grey-border;
+      border-radius: 0 0 4px 4px;
+      padding: 0 $modal-padding;
+      width: 100%;
+      height: 50px;
+    }
+
+    // not currently supporting mobile - disabled media queries for now.
+
+    // @media #{$small-screen} {
+    //   width: 30%;
+    //   margin-top: 10em;
+    // }
+
+    // @media #{$medium-screen} {
+    //   padding: $modal-padding;
+    //   width: 30%;
+    //   max-height: 60%;
+    //   margin-top: 10em;
+    // }
+
+    // @media #{$large-screen} {
+    //   width: 30%;
+    //   margin-top: 10em;
+    // }
+
+    h1 {
+      margin-bottom: .6em;
+      text-align: left;
+    }
+
+    p {
+      font-size: 1em;
+      max-width: 100% !important;
+
+      &.intro {
+        color: $ce-blue;
+        line-height: 1.6em;
+      }
+
+      &.body {
+        color: $ce-text;
+        line-height: 1.45em;
+      }
+    }
+    a.cta {
+      color: white;
+      display: inline-block;
+      margin-right: .5em;
+      margin-top: 1em;
+
+      &:last-child {
+        padding: 0 2em;
+      }
+    }
+  }
+
+  .modal-bottom-step-txt {
+    @include position(relative, 50% null null null);
+    transform: translateY(-50%);
+  }
+  .modal-bottom-close-label, .modal-bottom-link {
+    @include position(absolute, 50% 35px null null);
+    transform: translateY(-50%);
+    label { padding: 0; }
+  }
+
+  .modal-state:checked + .modal-window {
+    transition: opacity 0.25s ease;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .modal-state:checked + .modal-window .modal-inner {
+    transition: top 0.25s ease-in-out;
+  }
+  &.card-style {
+    .topper {
+      background: $ce-blue;
+      color: $white;
+      height: 70px;
+      width: 100%;
+      @include position(absolute, 0 0 null null);
+      border-radius: 4px 4px 0 0;
+      font: $proxima-nova-soft;
+      font-size: 20px;
+      line-height: 70px;
+    }
+    .modal-padding {
+      padding: 100px 30px 30px 30px;
+    }
+    .modal-close {
+      z-index: 999;
+      top: 15px;
+      right: 15px;
+      &:after {
+        color: $white;
+        opacity: 1;
+        position: relative;
+      }
+    }
+  }
+  .modal-inner.modal-welcomeback {
+    text-align: center;
+    width: 300px;
+    border: none;
+    .user-email {
+      color: $ce-dark-grey;
+      font-size: 16px;
+      padding-bottom: 10px;
+    }
+    .change-usr {
+      font-size: 13px;
+      text-decoration: none;
+      &:hover { text-decoration: underline; }
+    }
+    .profile-img {
+      margin: 0 auto;
+      width: 70px;
+      height: 70px;
+      margin-bottom: 10px;
+      img {
+        width: 100%;
+        border-radius: 2px;
+      }
+    }
+    button {
+      display: block;
+      width: 100%;
+      margin-top: 40px;
+    }
+  }
+}

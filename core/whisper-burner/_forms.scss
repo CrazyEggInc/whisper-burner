@@ -1,0 +1,71 @@
+form {
+	input[type="text"],
+	input[type="password"],
+	input[type="date"],
+	input[type="datetime"],
+	input[type="email"],
+	input[type="number"],
+	input[type="search"],
+	input[type="tel"],
+	input[type="time"],
+	input[type="url"],
+	textarea,
+	select {
+    // reset input styles
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+		color: $ce-blue-grey;
+		width: 150px;
+		height: 45px;
+		padding: 10px;
+		background: $white;
+		margin-right: 10px;
+		border: $ce-light-grey solid 1px;
+		border-radius: $border-radius;
+		font-size: .95em;
+		font-family: $proxima-nova;
+		transition: border 0.2s ease;
+		outline: none;
+		&::placeholder { color: darken($ce-light-grey,5%); }
+		&:focus {
+			border: darken($ce-light-grey,15%) solid 1px;
+		}
+		&.lge-input {
+			height: 56px;
+			font-size: 1.2em;
+			padding: 10px 15px;
+		}
+	}
+	.input-inline {
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 0;
+	}
+	select {
+	    -webkit-appearance: none;
+	    -moz-appearance: none;
+	    appearance: none;
+
+	    height: 45px;
+	    padding-right: 30px;
+	    background: #fff url(../images/downarrow2.svg) no-repeat;
+	    background-position: right 10px center;
+	    background-size: 10px;
+	    cursor: pointer;
+	}
+	label {
+		padding-bottom: 5px;
+		padding-top: 5px;
+		&.block-label {
+			display: block;
+		}
+	}
+}
+
+input.has-error { border-color: $ce-warning-red !important;}
+
+[placeholder]:focus::-webkit-input-placeholder {
+  color: #ddd;
+}
