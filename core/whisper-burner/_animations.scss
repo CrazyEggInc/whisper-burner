@@ -84,7 +84,7 @@
 	    width: 105px;
 	    height: 116px;
 	    @include position(absolute, null 7% 170px null);
-	    background: url("/images/recordings/ship.svg") no-repeat; // Leave quotes. Does not like it without quotes...
+	    background: url("/assets/images/recordings/ship.svg") no-repeat; // Leave quotes. Does not like it without quotes...
 	    background-size: 105px;
 	    background-position: center;
 
@@ -107,7 +107,7 @@
     width: 100%;
     height: 465px;
     @include position(absolute, null null -50px 0);
-    background: url("/images/recordings/dotted-line2.svg") no-repeat 46% center; // Leave quotes. Does not like it without quotes...
+    background: url("/assets/images/recordings/dotted-line2.svg") no-repeat 46% center; // Leave quotes. Does not like it without quotes...
     // Is not playing ball when a background-size applied either.
     opacity: 0.4;
     z-index: -2;
@@ -124,7 +124,7 @@
     height: 875px;
     @include position(absolute, null null -500px 50%);
     margin-left: -437px;
-    background: url("/images/recordings/earth.png") no-repeat; // Leave quotes. Does not like it without quotes...
+    background: url("/assets/images/recordings/earth.png") no-repeat; // Leave quotes. Does not like it without quotes...
     background-size: 100%;
     background-position: center;
     z-index: -1;
