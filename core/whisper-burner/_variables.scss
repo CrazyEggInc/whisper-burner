@@ -50,6 +50,8 @@ $proxima-nova: "proxima-nova", "proxima nova", $lucida-grande;
 $proxima-soft: "proxima-soft", $lucida-grande;
 $open-sans: "open sans", $lucida-grande;
 
+$proxima-nova-soft: $proxima-soft; // Backward compatibility-should be removed after all font PRs merged
+
 $border-radius: 4px;
 
 $solid-grey-border: 1px solid $ce-border;
