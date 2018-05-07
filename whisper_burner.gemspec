@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.description   = %q{Styles used by all Crazy Egg frontends.}
   spec.homepage      = 'https://www.crazyegg.com'
   spec.license       = 'MIT'
-  spec.files         = `git ls-files -z`.split('\x0').reject do |f|
+  spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
   end
   spec.bindir        = 'exe'
